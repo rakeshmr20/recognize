@@ -1,0 +1,16 @@
+{
+    "list": [
+        {
+            "name": "song 1",
+            "file": "sample.mp3",
+            "description": "nothing",
+            "owner": "Kashi"
+        },
+        {
+            "name": "song 2",
+            "file": "sample2.mp3",
+            "description": "nothing",
+            "owner": "Kashi"
+        }
+    ]
+}

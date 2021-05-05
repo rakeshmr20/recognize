@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Music Player</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://127.0.0.1:5700/api/static/css/main.css">
+  <script defer src="http://127.0.0.1:5700/api/static/js/page-handler.js"></script>
+  <script defer src="http://127.0.0.1:5700/api/static/js/face-api.min.js"></script>
+  <script defer src="http://127.0.0.1:5700/api/static/js/recognizer.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+    <div class="row"> <!-- row 1 -->
+        <div class="col-md-9">
+            <h2>Music Player</h2>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-outline-secondary">Dark Mode</button>
+        </div>
+    </div> <!-- row 1 end -->
+  <br>
+  <div class="row justify-content-center"> <!--row 2 -->
+      <div class="col-md-12 text-center">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#player">Player</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#managesongs">Song Manager</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#about">About</a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="player" class="container tab-pane active center"><br>
+              <h3>Player</h3>
+              <p class="small-gap"></p>
+              <div class="row">
+                  <div id="stream" class="col-6">
+                    <video id="video" width="320" height="240" autoplay muted onplay="videoStreamPanel(this)"></video>
+                    <!-- <canvas class="canvas" id="stream-canvas"></canvas> -->
+                    <h4>Emotion: <span id="emotion">:)</span></h4>
+                    <hr/>
+                    <div class="invisible" id="stream-btn">
+                        <button type="button" class="btn btn-outline-success" onclick="startVideo()">Start Stream</button>
+                        <button type="button" class="btn btn-outline-warning" onclick="stopVideo()">Stop Stream</button>
+                        <p class="visible" id="mload">Loading modules...</p>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                      <p>Playing music for the emotion: <span id="audio-emotion">:)</span></p>
+                      <p class="small-gap"></p>
+                      <div class="invisible" id="player-ui">
+                        <!-- <audio src="" id="song" loop controls autoplay></audio> -->
+                        <div id="ado"></div>
+                        <p id="audio-loading">Loading music player...</p>
+                      </div>
+                      <hr/>
+                      <div class="invisible" id="player-btn">
+                        <button type="button" class="btn btn-outline-info" onclick="manualStartMusic()">Play</button>
+                        <button type="button" class="btn btn-outline-info invisible" onclick="nextSong()" id="play-next">Next</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div id="managesongs" class="container tab-pane fade"><br>
+              <h3>Manage Songs</h3>
+              <p>Upload songs</p>
+            </div>
+            <div id="about" class="container tab-pane fade"><br>
+              <h3>About</h3>
+              <p>Projects details</p>
+            </div>
+          </div>
+      </div>
+  </div> <!--row 2 end -->
+  <p class="small-gap"></p>
+  <hr/>
+  <div class="row justify-content-center">
+      <div class="col-4 mx-auto text-center">
+          <p>display user photo</p>
+      </div>
+      <div class="col-4 mx-auto text-center">
+          <p>other logs</p>
+      </div>
+      <div class="col-4 mx-auto text-center">
+          <p>played songs list</p>
+      </div>
+  </div>
+</div> <!-- container end -->
+
+</body>
+</html>

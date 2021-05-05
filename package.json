@@ -1,0 +1,24 @@
+{
+  "name": "recognize",
+  "version": "1.0.0",
+  "description": "Project based on face-api.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakeshmr20/recognize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakeshmr20/recognize/issues"
+  },
+  "homepage": "https://github.com/rakeshmr20/recognize#readme",
+  "dependencies": {
+    "fastify": "^3.15.1",
+    "fastify-static": "^4.0.1"
+  }
+}
